@@ -1,0 +1,26 @@
+
+ <button class="page-item" routerLink="/members">Members</button>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Image</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let character of characters">
+    <td>
+      <img [src]="concateneImage(character.thumbnail)">
+    </td>
+    <td>{{ character.name }}</td>
+    <td>{{ character.description }}</td>
+    <td><button class="page-item" (click)="addMember(character)">Add</button>    </td>
+  </tr>
+  </tbody>
+</table>
+
+    <button class="page-item" (click)="changePage('previous')" *ngIf="offset >= 20">Previous</button>
+    <button class="page-item" (click)="changePage('next')">Next</button>
+  

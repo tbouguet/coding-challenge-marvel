@@ -1,0 +1,15 @@
+<button class="page-item" routerLink="/characters">Characters</button>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let member of members">
+      <td>{{ member.name }}</td>
+      <td><button class="page-item" (click)="deleteMember(member.id)">Delete</button>    </td>
+    </tr>
+    </tbody>
+</table>
